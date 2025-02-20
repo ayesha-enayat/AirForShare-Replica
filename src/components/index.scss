@@ -1,0 +1,42 @@
+$primary-color: #638eff;
+$primary-dark-color: #745dff;
+.text-area{
+    border: none;
+    resize: none;
+    font-size: 22px;
+    letter-spacing: .7px;
+    color:#000;
+    width:100%;
+    padding:10px 0;
+    border:none;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    &:focus{
+        outline: none;
+    }
+    &::placeholder{
+        color: #a1a3a1;
+        font-weight: lighter;
+        font-family: 'Open Sans', sans-serif;
+    }
+}
+.theme-button{
+    border:2px solid black;
+    background-color: #fff;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 700;
+    padding:12px 70px;
+    cursor: pointer;
+    &:hover{
+        color:$primary-dark-color;
+        border-color: $primary-dark-color;
+        text-shadow: 1px 1px 0px $primary-dark-color;
+        box-shadow: 1px 1px 0px 0px $primary-dark-color;
+    }
+    &:active{
+        color:#fff;
+        background-image: linear-gradient(to bottom,#864bff,#5082ff);
+    }
+}

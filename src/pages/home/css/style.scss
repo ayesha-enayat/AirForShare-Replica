@@ -61,7 +61,6 @@ body {
     min-height: 350px;
     margin: 30px;
     box-shadow: 0 21px 33px 0 rgba(0, 0, 0, .1);
-    border: 1px solid #fff;
 
     .card-sidebar {
         padding: 10px;
@@ -71,16 +70,56 @@ body {
         div {
             margin-bottom: 40px;
             cursor: pointer;
+            padding: 15px;
 
-            // svg {
-            //     color: $light-color;
-            // }
+            img {
+                width: 25px;
+            }
+
         }
-        // .active {
-        //     svg {
-        //         color: $primary-dark-color;
-        //     }
-        // }
-
     }
+}
+
+.card-container {
+    border: 1px solid #fff;
+    padding: 0 40px;
+    width: 100%;
+
+    div {
+        h1 {
+            font-size: 44px;
+            font-weight: 700;
+            line-height: .85;
+            letter-spacing: .6px;
+            margin-bottom: 28px;
+            color: #000;
+        }
+    }
+
+    .text-section {
+        height:100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .resize-section {
+            flex:1;
+            width: 100%;
+        }
+        
+        .save-btn-section {
+            span{
+                font-size: 14px;
+                margin-right: 50px;
+                cursor: pointer;
+            }
+            display: flex; 
+            flex-direction: row; 
+            align-items: center; 
+            gap: 10px; 
+            padding: 20px 0;
+            justify-content: flex-end;
+        }
+        
+    }
+
 }
