@@ -1,4 +1,8 @@
 import React, { useState } from 'react'
+import Dropzone from '../../components/Dropzone'
+import FilesList from '../../components/FilesList'
+
+
 import logoIMG from "../../assets/logo.svg"
 import textgrey from "../../assets/text-grey.svg"
 import filegrey from "../../assets/files-grey.svg"
@@ -11,7 +15,8 @@ import ThemeButton from '../../components/Button'
 
 const HomePage = () => {
   const [type, setType] = useState("text")
-  const [textValue,setTextValue] =useState("")
+  const [textValue, setTextValue] = useState("")
+
   return (
     <div>
       <div className="container">
@@ -32,9 +37,9 @@ const HomePage = () => {
         <div className="main-card">
 
           <div className="card-sidebar">
-            <div onClick={()=>setType("text")} className={type === "text"}> <img src={type === "text" ? textColor : textgrey} alt="" /></div>
+            <div onClick={() => setType("text")} className={type === "text"}> <img src={type === "text" ? textColor : textgrey} alt="" /></div>
 
-            <div onClick={()=>setType("files")} className={type === "files"}><img src={type === "files" ? fileColor : filegrey} alt="" /></div>
+            <div onClick={() => setType("files")} className={type === "files"}><img src={type === "files" ? fileColor : filegrey} alt="" /></div>
 
 
           </div>
@@ -42,16 +47,21 @@ const HomePage = () => {
             {type === "text" ?
               <div className="text-section">
                 <h1>Text</h1>
-              <div className='resize-section'>
-              <TextArea value={textValue} onChange={(e)=>setTextValue(e.target.value)}/>
-              </div>
-              <div className="save-btn-section">
-              <span>Clear</span>
-              <ThemeButton title="Save" disabled={textValue? false : true}/>
-              </div>
+                <div className='resize-section'>
+                  <TextArea value={textValue} onChange={(e) => setTextValue(e.target.value)} />
+                </div>
+                <div className="save-btn-section">
+                  <span>Clear</span>
+                  <ThemeButton title="Save" disabled={textValue ? false : true} />
+                </div>
               </div>
               :
-              <div className="files-section"><h1>Files</h1></div>
+              <div className="files-section">
+                <h1>Files</h1>
+                {/* <Dropzone textElement={<>Drag and drop any files up to 2 files , 5Mbs each or <span>Browse Upgrade </span>
+                  to get more space</>}/> */}
+                <FilesList />
+              </div>
             }
           </div>
         </div>

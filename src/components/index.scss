@@ -40,3 +40,60 @@ $primary-dark-color: #745dff;
         background-image: linear-gradient(to bottom,#864bff,#5082ff);
     }
 }
+.dropzone{
+    width:100%;
+    height: 60%;
+    border:2px dashed rgb(158, 161, 161,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div{
+        color:rgb(158, 161, 161);
+        width:50%;
+        text-align: center;
+        line-height: 40px;
+        span{
+            color:$primary-dark-color;
+        }
+    }
+
+}
+.files-list{
+    display: flex;
+    div{
+        width: 100px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        svg{
+            color:rgba(123, 125, 125);
+            font-size: 34px;
+            margin-bottom: 6px;
+        }
+        &:hover{
+            background-color: rgb(220, 219, 219,.5);
+        }
+    }
+}
+.add-more-files{
+    line-height: 20px ;
+
+    svg{
+      margin:0px !important;
+      font-size: 24px !important;
+      color:$primary-dark-color !important;
+    }
+    p{
+      margin: 0px !important;
+      font-size: 14px;
+      font-weight: bold;
+    
+    }
+    .upto5MB{
+        font-size: 10px !important;
+        color:rgba(123, 125, 125) !important;
+    }
+}
