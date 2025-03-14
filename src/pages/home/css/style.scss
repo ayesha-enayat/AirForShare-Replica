@@ -123,6 +123,44 @@ body {
     }
     .files-section{
         height:100%;
+        .files-header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .files-btn{
+                display: flex;
+                align-items: center;
+                gap:30px;
+                div{
+                    display: flex;
+                    align-items: center;
+                    font-size: 12px;
+                    cursor: pointer;
+                    &:active{
+                        opacity: 0.5;
+                    }
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+                .download-btn{
+                    color:$primary-color;
+                    svg{
+                        font-size: 20px;
+                        margin-right: 6px;
+                    }
+                }
+                .delete-btn{
+                    color:#963a46;
+                    svg{
+                        font-size: 22px;
+                        margin-right: 6px;
+                        margin-bottom: 2px;
+                    }
+                    
+                }
+            }
+        }
     }
 }
 

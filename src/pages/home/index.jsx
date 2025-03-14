@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import Dropzone from '../../components/Dropzone'
 import FilesList from '../../components/FilesList'
+import { FaDownload } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
+
 
 
 import logoIMG from "../../assets/logo.svg"
@@ -9,6 +12,7 @@ import filegrey from "../../assets/files-grey.svg"
 import textColor from "../../assets/text-color.svg"
 import fileColor from "../../assets/files-color.svg"
 
+
 import "./css/style.scss"
 import TextArea from '../../components/TextArea'
 import ThemeButton from '../../components/Button'
@@ -16,6 +20,11 @@ import ThemeButton from '../../components/Button'
 const HomePage = () => {
   const [type, setType] = useState("text")
   const [textValue, setTextValue] = useState("")
+  const [files, setFiles] = useState([])
+    const onDrop = acceptedFiles => {
+          // console.log("accepted files", acceptedFiles)
+          setFiles([...files,...acceptedFiles]);
+      }
 
   return (
     <div>
@@ -57,11 +66,29 @@ const HomePage = () => {
               </div>
               :
               <div className="files-section">
-                <h1>Files</h1>
-                {/* <Dropzone textElement={<>Drag and drop any files up to 2 files , 5Mbs each or <span>Browse Upgrade </span>
-                  to get more space</>}/> */}
-                <FilesList />
+                <div className='files-header'>
+                  <h1>Files</h1>
+                  <div className='files-btn'>
+                    <div className='download-btn'><FaDownload /> Download All </div>
+                    <div onClick={()=>setFiles([])} className='delete-btn'><MdDelete /> Delete All </div>
+                  </div>
+                  </div>
+                 {files.length ?
+                   <FilesList onDrop={onDrop} files={files}/>
+                   :
+                 <Dropzone 
+                 onDrop ={
+                  onDrop
+                 }
+                 textElement={
+                  <>Drag and drop any files up to 2 files , 5Mbs each or <span>Browse Upgrade </span>
+                  to get more space
+                  </>
+                }/>
+              }
+                
               </div>
+
             }
           </div>
         </div>
