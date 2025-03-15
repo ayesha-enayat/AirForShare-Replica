@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-    width: 70%;
+    width: 60%;
     margin: 0 auto;
     margin-top: 50px;
 }
@@ -58,7 +58,7 @@ body {
     display: flex;
     background-color: $white;
     width: 100%;
-    min-height: 350px;
+    min-height: 400px;
     margin: 30px;
     box-shadow: 0 21px 33px 0 rgba(0, 0, 0, .1);
 
@@ -97,70 +97,101 @@ body {
     }
 
     .text-section {
-        height:100%;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
         .resize-section {
-            flex:1;
+            flex: 1;
             width: 100%;
         }
-        
+
         .save-btn-section {
-            span{
+            span {
                 font-size: 14px;
                 margin-right: 50px;
                 cursor: pointer;
             }
-            display: flex; 
-            flex-direction: row; 
-            align-items: center; 
-            gap: 10px; 
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
             padding: 20px 0;
             justify-content: flex-end;
         }
-        
-    }
-    .files-section{
-        height:100%;
-        .files-header{
+
+        .text-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            .files-btn{
+
+            div {
+                margin-bottom: 4px;
+
+                span {
+                    a {
+                        color: &$primary-color;
+                    }
+                }
+            }
+
+            .link {
+                flex: 1;
+            }
+        }
+
+    }
+
+    .files-section {
+        height: 100%;
+
+        .files-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .files-btn {
                 display: flex;
                 align-items: center;
-                gap:30px;
-                div{
+                gap: 30px;
+
+                div {
                     display: flex;
                     align-items: center;
                     font-size: 12px;
                     cursor: pointer;
-                    &:active{
+
+                    &:active {
                         opacity: 0.5;
                     }
-                    &:hover{
+
+                    &:hover {
                         text-decoration: underline;
                     }
                 }
-                .download-btn{
-                    color:$primary-color;
-                    svg{
+
+                .download-btn {
+                    color: $primary-color;
+
+                    svg {
                         font-size: 20px;
                         margin-right: 6px;
                     }
                 }
-                .delete-btn{
-                    color:#963a46;
-                    svg{
+
+                .delete-btn {
+                    color: #963a46;
+
+                    svg {
                         font-size: 22px;
                         margin-right: 6px;
                         margin-bottom: 2px;
                     }
-                    
+
                 }
             }
         }
     }
 }
-

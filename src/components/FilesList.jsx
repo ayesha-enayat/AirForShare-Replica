@@ -39,18 +39,18 @@ const FilesList = ({ files, onDrop }) => {
         }
         return (
           <div key={i}>
-  
+
             {v.type.indexOf("image") !== -1 ?
-         
-          
-            <img  className="image-file" width={"100"} height={100} src={URL.createObjectURL(v)} alt="uploaded file" />
-            :
-            <>
-            {icon}
-            <span className='file-name'>
-              {v.name.slice(0, 10)}<b>{v.name.slice(v.name.lastIndexOf("."))}</b>
-            </span>
-            </>
+
+
+              <img className="image-file" width={"100"} height={100} src={URL.createObjectURL(v)} alt="uploaded file" />
+              :
+              <>
+                {icon}
+                <span className='file-name'>
+                  {v.name.slice(0, 10)}<b>{v.name.slice(v.name.lastIndexOf("."))}</b>
+                </span>
+              </>
             }
           </div>
 
